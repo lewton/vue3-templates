@@ -26,3 +26,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# 不增加 local 文件，直接忽略线上环境配置
+.env.production

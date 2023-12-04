@@ -16,7 +16,8 @@
 </template>
 
 <script setup>
-console.log(ref)
+import { api } from '@/apis'
+console.log(api)
 </script>
 
 <style lang="scss" scoped></style>
