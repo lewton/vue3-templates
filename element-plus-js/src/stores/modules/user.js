@@ -2,7 +2,9 @@ import { defineStore } from 'pinia'
 import { PINIA_USER, PINIA_USER_PERSIST } from '@/config'
 
 const useStore = defineStore(PINIA_USER, {
-  state: () => ({}),
+  state: () => ({
+    token: ''
+  }),
   getters: {},
   actions: {},
   persist: {

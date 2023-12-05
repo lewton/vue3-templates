@@ -30,6 +30,12 @@ export const AXIOS_CONFIG = {
 }
 
 /**
+ * Router 配置
+ */
+export const ROUTER_HOME_NAME = 'HomeView'
+export const ROUTER_LOGIN_NAME = 'LoginView'
+
+/**
  * PINIA 状态管理配置
  *   _PERSIST 指的是状态管理持久化存储名称
  */
@@ -37,3 +43,16 @@ export const PINIA_MAIN = 'main'
 export const PINIA_MAIN_PERSIST = 'main'
 export const PINIA_USER = 'user'
 export const PINIA_USER_PERSIST = 'user'
+
+/**
+ * 接口请求地址统一管理
+ */
+export const API_AUTH_LOGIN = '/auth/login'
+export const API_AUTH_REGISTER = '/auth/register'
+export const API_AUTH_PROFILE = '/user/profile'
+
+/**
+ * 一页数量
+ */
+export const PAGE_SIZE = 20
+export const PAGE_SIZES = [20, 50, 100, 200]

@@ -51,21 +51,22 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/assets/styles/var.scss";@import "@/assets/styles/mixin.scss";`
+        additionalData: `@import "@/assets/styles/var.scss";@import "@/assets/styles/mixin.scss";`,
+        includePaths: ['./src/assets'] // 这里是SCSS预处理器在解析导入时搜索的路径
       }
     }
   },
-  // server: {
-  //   // https://cn.vitejs.dev/config/server-options.html#server-proxy
-  //   proxy: {
-  //     // 带选项写法：http://localhost:5173/api/bar -> http://jsonplaceholder.typicode.com/bar
-  //     '/api': {
-  //       target: 'http://localhost:3000',
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/api/, '')
-  //     }
-  //   }
-  // },
+  server: {
+    // https://cn.vitejs.dev/config/server-options.html#server-proxy
+    proxy: {
+      // 带选项写法：http://localhost:5173/api/bar -> http://jsonplaceholder.typicode.com/bar
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  },
   build: {
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖

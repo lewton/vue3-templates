@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+  &:hover {
+    background-color: #bbb;
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: var(--el-bg-color-page);
+  border-radius: 4px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+// 自定义 card
+.card {
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--el-border-color-light);
+  background-color: var(--el-fill-color-blank);
+  overflow: hidden;
+  color: var(--el-text-color-primary);
+  transition: var(--el-transition-duration);
+}
+
+.card.is-always-shadow {
+  box-shadow: var(--el-box-shadow-light);
+}
+
+// 外边距、内边距
+$box-size: 'm', 'p';
+$box-size-name: 'margin', 'padding';
+$box-size-dir: 'l', 'r', 't', 'b';
+$box-size-dir-name: 'left', 'right', 'top', 'bottom';
+$size: 10, 20, 30, 40, 50;
+
+@for $i from 1 through length($box-size) {
+  $bs: nth($box-size, $i);
+  $bsn: nth($box-size-name, $i);
+  @for $j from 1 through length($box-size-dir) {
+    $bsd: nth($box-size-dir, $j);
+    $bsdn: nth($box-size-dir-name, $j);
+    @for $k from 1 through length($size) {
+      $s: nth($size, $k);
+      .#{$bs}#{$bsd}-#{$s} {
+        #{$bsn}-#{$bsdn}: #{$s}px;
+      }
+    }
+  }
+}

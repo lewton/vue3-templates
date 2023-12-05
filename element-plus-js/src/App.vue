@@ -11,4 +11,7 @@ const locale = zhCn
   </el-config-provider>
 </template>
 
-<style></style>
+<style lang="scss">
+@import url('@/assets/styles/base.scss');
+@import url('@/assets/styles/element-plus.scss');
+</style>

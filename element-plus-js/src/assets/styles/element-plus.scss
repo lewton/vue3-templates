@@ -1,0 +1,27 @@
+// element-plus component extends style
+.el-button.block {
+  width: 100%;
+}
+
+.el-popover {
+  &.shadow {
+    box-shadow:
+      rgb(14 18 22 / 35%) 0px 10px 38px -10px,
+      rgb(14 18 22 / 20%) 0px 10px 20px -15px;
+  }
+  &.avatar {
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .username {
+      font-weight: 500;
+    }
+    .rolename {
+      margin: 0;
+      font-size: 14px;
+      color: var(--el-color-info);
+    }
+  }
+}
