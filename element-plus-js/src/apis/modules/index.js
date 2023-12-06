@@ -41,11 +41,17 @@ class DefaultAxioser extends Axioser {
     return data.data
   }
   responseUseRejected(error) {
-    console.log(error)
+    console.error(error)
+
     this.autoLoading && closeLoading()
 
+    if (error.response.status === 401) {
+      // Unauthorized 无效凭证，无法继续保持登录，需要清除当前用户状态，让用户重新登录
+      console.error('Unauthorized')
+    }
+
     // 统一响应错误提示处理
-    this.autoErrorMessage && openErrorMessage(error)
+    this.autoErrorMessage && openErrorMessage(error.message)
 
     // 处理响应错误
     return Promise.reject(error)

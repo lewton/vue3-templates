@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import NProgress from '@/utils/nprogress'
+import LayoutView from '@/views/layout/LayoutView.vue'
 import HomeView from '@/views/home/HomeView.vue'
 import LoginView from '@/views/login/LoginView.vue'
 import { ENV, ROUTER_HOME_NAME, ROUTER_LOGIN_NAME } from '@/config'
@@ -12,8 +13,16 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: ROUTER_HOME_NAME,
-      component: HomeView
+      name: 'root',
+      component: LayoutView,
+      redirect: { name: ROUTER_HOME_NAME },
+      children: [
+        {
+          path: '/home',
+          name: ROUTER_HOME_NAME,
+          component: HomeView
+        }
+      ]
     },
     {
       path: '/login',

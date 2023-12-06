@@ -1,7 +1,7 @@
 <script setup>
 import logo from '@/assets/images/vue.svg'
 import SlSubMenu from './skyline/SlSubMenu.vue'
-import IconEpApple from '~icons/ep/apple'
+import Icons from '@/config/icons'
 import SlSearch from './skyline/SlSearch.vue'
 import { CreditCard, Bell } from '@element-plus/icons-vue'
 import SlAvatar from './skyline/SlAvatar.vue'
@@ -18,31 +18,31 @@ const items = [
   {
     name: 'AdminHome',
     title: '主页',
-    icon: IconEpApple,
+    icon: Icons['ep-apple'],
     children: []
   },
   // 权限管理
   {
     name: 'PermissionManage',
     title: '权限管理',
-    icon: IconEpApple,
+    icon: Icons['ep-apple'],
     children: [
       {
         name: 'UserList',
         title: '用户列表',
-        icon: IconEpApple,
+        icon: Icons['ep-apple'],
         children: []
       },
       {
         name: 'RoleList',
         title: '角色列表',
-        icon: IconEpApple,
+        icon: Icons['ep-apple'],
         children: []
       },
       {
         name: 'PermissionList',
         title: '权限列表',
-        icon: IconEpApple,
+        icon: Icons['ep-apple'],
         children: []
       }
     ]
@@ -69,7 +69,7 @@ const menuSelect = (name) => {
 const tabs = [
   {
     title: '主页',
-    icon: IconEpApple,
+    icon: Icons['ep-apple'],
     name: 'AdminHome',
     closable: false
   }

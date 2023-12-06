@@ -1,9 +1,7 @@
-<script setup>
-import SkylineLayout from '@/components/layout/SkylineLayout.vue'
-</script>
+<script setup></script>
 
 <template>
-  <SkylineLayout />
+  <div>1111</div>
 </template>
 
 <style lang="scss" scoped>
